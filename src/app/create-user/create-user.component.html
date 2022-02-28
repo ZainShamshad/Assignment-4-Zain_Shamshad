@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form">
+                <h4>Create Account</h4>
+                <hr/>
+                <br/>
+                <input class="type"  type="text" name="username" id="username" placeholder="enter username*" [(ngModel)]="username">
+                <br> <br>
+                <input class="type"  type="password" name="password" id="password" placeholder="enter password*" [(ngModel)]="password">
+                <br><br>
+                <hr/>
+                <button (click)="create()">Register User</button>
+            </div>
+        </div>
+    </div>
+</div>

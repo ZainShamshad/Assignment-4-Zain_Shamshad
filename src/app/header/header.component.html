@@ -1,0 +1,109 @@
+<header>
+    <nav>
+        <ul>
+            <li (click)="itemSelected('HOME')"
+            ActiveItem [isActive]="isActive('HOME')"
+            InactiveItem [isInactive]="isInactive('HOME')"
+            >Home</li>
+            <li (click)="itemSelected('BLOG')"
+            
+            ActiveItem [isActive]="isActive('BLOG')"
+            InactiveItem [isInactive]="isInactive('BLOG')"
+            >Blogs</li>
+            <li (click)="itemSelected('CREATEBLOG')" *ngIf="user.getUsername().length>0"
+                matTooltip="Create a new blog"
+                ActiveItem [isActive]="isActive('CREATEBLOG')"
+                InactiveItem [isInactive]="isInactive('CREATEBLOG')"
+                >Create Blog</li>
+            <li (click)="itemSelected('ABOUTUS')"
+            ActiveItem [isActive]="isActive('ABOUTUS')"
+            InactiveItem [isInactive]="isInactive('ABOUTUS')"
+            >About Us</li>
+            <li 
+                (click)="itemSelected('LOGIN')" 
+                *ngIf="user.getUsername().length<=0"
+                ActiveItem [isActive]="isActive('LOGIN')"
+                InactiveItem [isInactive]="isInactive('LOGIN')"
+            >
+                Login
+            </li>
+            <li (click)="itemSelected('LOGOUT')" *ngIf="user.getUsername().length>0"
+                ActiveItem [isActive]="isActive('LOGOUT')"
+                matTooltip="Click to logout of your account"
+                >Logout</li>
+            <li *ngIf="user.getUsername().length>0"
+                ActiveItem [isActive]="isActive('USERNAME')"
+                matTooltip="Currently Logged In User's name"
+                matTooltipPosition="after"
+                >{{bullet}} {{user.getUsername()}} </li>
+        </ul>
+    </nav>
+</header>
+
+
+<!-- 
+    
+<div class="container">
+    <nav class="navbar navbar-default bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand"> {{bullet}} B L O G {{bullet}} S I T E {{bullet}}</a>
+            </div>
+    
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav active " aria-current="page">
+                    <li (click)="itemSelected('HOME')" class="nav-item">
+                       <a href="#" class="nav-link">Home</a>
+                    </li>
+    
+                    <li (click)="itemSelected('BLOG')"
+                    >
+                        Blogs
+                    </li>
+    
+                    <li (click)="itemSelected('CREATEBLOG')" 
+                        *ngIf="username.length>0"
+                        matTooltip="Create a new blog" 
+                        class="nav-item">
+                        Create Blog
+                    </li>
+                    
+                    <li (click)="itemSelected('ABOUTUS')" 
+                        class="nav-item">
+                        About Us
+                    </li>
+    
+                    
+                    <li 
+                        (click)="itemSelected('LOGIN')" 
+                        *ngIf="username.length<=0" 
+                        class="nav-item">
+                        Login
+                    </li>
+    
+                    
+                    <li *ngIf="username.length>0"
+                        matTooltip="Currently Logged In User's name"
+                        matTooltipPosition="after"
+                        class="nav-item dropdown"
+                    >
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{bullet}} {{username}} 
+                        </a>
+                            
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li (click)="itemSelected('LOGOUT')" 
+                                *ngIf="username.length>0"
+                                matTooltip="Click to logout of your account"
+                                class="dropdown-item"
+                            >
+                                Logout
+                            </li>
+                        </ul>
+                    </li>
+    
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div> -->
